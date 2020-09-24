@@ -37,7 +37,6 @@ O desafio consiste em criar uma API RPC para facilitar o gerenciamento de uma fi
 <ul>
 <li>O projeto foi construído inteiramente em javaScript;</li>
 <li>O framework utilizado para simular o servidor foi o Koa;</li>
-<li>Foi criada uma Collection no Postman para verificação dos endpoints. Você pode acessá-la cliando <a href=''>aqui</a>;</li>
 <li>Antes de todas as funcões e dos possíveis erros, existem comentários explicando os retornos e as saídas;</li>
 <li>Foi estabelecido um modelo de resposta: 
 
@@ -48,4 +47,6 @@ O desafio consiste em criar uma API RPC para facilitar o gerenciamento de uma fi
 }
 ```
 </li>
+
+<li>Foi criada uma Collection no Postman para verificação dos endpoints. Você pode acessá-la cliando <a href='https://www.getpostman.com/collections/1b7aa9b433d4dd39608a'>aqui<a/></li>
 </ul>
