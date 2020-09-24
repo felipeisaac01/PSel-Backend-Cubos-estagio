@@ -1,0 +1,25 @@
+{
+  "name": "PSel-Backend-Cubos-estagio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipeisaac01/PSel-Backend-Cubos-estagio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipeisaac01/PSel-Backend-Cubos-estagio/issues"
+  },
+  "homepage": "https://github.com/felipeisaac01/PSel-Backend-Cubos-estagio#readme",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^9.4.0"
+  }
+}
