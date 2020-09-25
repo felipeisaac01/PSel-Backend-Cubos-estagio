@@ -91,13 +91,7 @@ const fila = [{
  * @param {string} email 
  */
 const acharPosicao = (email) => {
-    let posicao;
-
-    fila.forEach((pessoa, index) => {
-        if (email === pessoa.email) {
-            posicao = index + 1;
-        };
-    });
+    const posicao = fila.findIndex(pessoa => email === pessoa.email) + 1 
 
     return posicao;
 };
