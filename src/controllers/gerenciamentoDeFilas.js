@@ -46,7 +46,11 @@ const fila = [{
  * @param {string} email 
  */
 const acharPosicao = (email) => {
-    const posicao = fila.findIndex(pessoa => email === pessoa.email) + 1 
+    const posicao = fila.findIndex(pessoa => email === pessoa.email) + 1;
+
+    if (posicao === 0) {
+        return;
+    } 
 
     return posicao;
 };
@@ -276,7 +280,7 @@ const addToLine = (ctx) => {
         });
         return;
     };
-
+    
     const usuarioNaFila = acharPosicao(cadastro.email);
     // testando se o usuário ja está na fila, se ja estiver retorna erro e a posição dele
     if (usuarioNaFila !== undefined) {
@@ -289,7 +293,7 @@ const addToLine = (ctx) => {
 
     const posicao = adicionarAoFimDaFila(cadastro);
     response(ctx, 200, {
-        posição: posicao
+        posição: posicao 
     });
 }
 
