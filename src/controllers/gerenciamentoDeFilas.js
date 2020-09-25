@@ -107,11 +107,10 @@ const acharPosicao = (email) => {
  * Função responsável por numerar o array fila;
  */
 const numerarFila = () => {
-    const filaNumerada = [];
     //adicionando a posição de cada um no momento em que for chamada a função
-    fila.forEach((posicao, index) => {
+    const filaNumerada = fila.map((posicao, index) => {
         const posicaoNumerada = { posicaoNaFila: index+1, ...posicao }
-        filaNumerada.push(posicaoNumerada);
+        return posicaoNumerada;
     });
     
     return filaNumerada;
@@ -124,12 +123,8 @@ const numerarFila = () => {
  * @param {string} valor 
  */
 const buscarCadastro = (dado, valor) => {
-    let cadastro;
-
-    listaDeUsuarios.forEach(item => {
-        if (item[`${dado}`] === valor) {
-            cadastro = item;
-        };
+    const cadastro = listaDeUsuarios.find(item => {
+        return item[`${dado}`] === valor
     });
 
     return cadastro;
@@ -171,7 +166,6 @@ const criarCadastro = (corpoDaRequisicao) => {
  */
 const adicionarAoFimDaFila = (cadastro) => {
     fila.push(cadastro);
-
     return fila.length;
 };
 
