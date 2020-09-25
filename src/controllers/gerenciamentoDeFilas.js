@@ -16,31 +16,6 @@ const listaDeUsuarios = [{
     genero: 'Homem Cis',
     email: 'felipe@email.com',
     idDoUsuario: 1,
-},{
-    nome: 'Nicholas',
-    genero: 'Homem Cis',
-    email: 'nick@email.com',
-    idDoUsuario: 2,
-},{
-    nome: 'Fernanda',
-    genero: 'Mulher Trans',
-    email: 'fernanda@email.com',
-    idDoUsuario: 3,
-},{
-    nome: 'João',
-    genero: 'Outro',
-    email: 'joao@email.com',
-    idDoUsuario: 4,
-},{
-    idDoUsuario: 5,
-    nome: 'Maria',
-    genero: 'Fluido',
-    email: 'maria@email.com',
-},{
-    nome: 'Nathalia',
-    genero: 'Prefere não informar',
-    email: 'nathalia@email.com',
-    idDoUsuario: 6,
 }];
 
 
@@ -59,26 +34,6 @@ const listaDeUsuarios = [{
  * e quando numerada, é adicinado uma propriedade 'lugarNaFila' no começo do objeto.
  */
 const fila = [{
-    nome: 'Nicholas',
-    genero: 'Homem Cis',
-    email: 'nick@email.com',
-    idDoUsuario: 2,
-},{
-    nome: 'Nathalia',
-    genero: 'Prefere não informar',
-    email: 'nathalia@email.com',
-    idDoUsuario: 6,
-},{
-    nome: 'Maria',
-    genero: 'Fluido',
-    email: 'maria@email.com',
-    idDoUsuario: 5,
-},{
-    nome: 'Fernanda',
-    genero: 'Mulher Trans',
-    email: 'fernanda@email.com',
-    idDoUsuario: 3,
-},{
     nome: 'Felipe',
     genero: 'Homem Cis',
     email: 'felipe@email.com',
