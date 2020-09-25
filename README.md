@@ -50,3 +50,6 @@ O desafio consiste em criar uma API RPC para facilitar o gerenciamento de uma fi
 
 <li>Foi criada uma Collection no Postman para verificação dos endpoints. Você pode acessá-la cliando <a href='https://www.getpostman.com/collections/1b7aa9b433d4dd39608a'>aqui<a/></li>
 </ul>
+
+## Instalação
+<p>Para instalar, basta digitar `npm start` no seu terminal.</p>
