@@ -1,4 +1,4 @@
-const response = require('./response').response
+const {response} = require('./response');
 
 /**
  * Uma lista dos usuários cadastrados;
@@ -110,8 +110,8 @@ const numerarFila = () => {
     const filaNumerada = [];
     //adicionando a posição de cada um no momento em que for chamada a função
     fila.forEach((posicao, index) => {
-        const posicaoNumerada = {posicaoNaFila: index+1, ...posicao}
-        filaNumerada.push(posicaoNumerada)
+        const posicaoNumerada = { posicaoNaFila: index+1, ...posicao }
+        filaNumerada.push(posicaoNumerada);
     });
     
     return filaNumerada;
@@ -189,7 +189,7 @@ const filtrarFila = (parametro, valorDoParametro) => {
         return pessoa[`${parametro}`] === valorDoParametro;
     });
 
-    return listaFiltrada
+    return listaFiltrada;
 };
 
 
@@ -212,20 +212,20 @@ const findPosition = (ctx) => {
     const cadastrado = buscarCadastro('email', email);
     // teste para confirmar cadastro do email fornecido no sistema
     if (!cadastrado) {
-        response(ctx, 400, { mensagem: 'Não existe cadastro para o email fornecido'})
+        response(ctx, 400, { mensagem: 'Não existe cadastro para o email fornecido' });
         return;
     };
 
-    const posicao = acharPosicao(email)
+    const posicao = acharPosicao(email);
     // se a funcao de procurar email retornar undefined, é porque nao 
     // foi encontrado ninguem na fila com o email inserido
     if (posicao === undefined) {
-        response(ctx, 200, {mensagem: 'Não há ninguém na fila com o e-mail inserido'})
+        response(ctx, 200, {mensagem: 'Não há ninguém na fila com o e-mail inserido'});
         return;
     };
 
-    response(ctx, 200, {posição: posicao})
-}
+    response(ctx, 200, { posição: posicao });
+};
 
 /**
  * Função responsável por retornar a fila completa numerada; 
@@ -235,30 +235,30 @@ const showLine = (ctx) => {
 
     // se a fila estiver vazia
     if (filaNumerada.length === 0) {
-        response(ctx, 200, {mensagem: 'a fila está vazia'})
+        response(ctx, 200, { mensagem: 'a fila está vazia' })
         return;
     };
 
     
     response(ctx, 200, {
         tamanhoDaFila: filaNumerada.length,
-        fila: filaNumerada 
-    } )
-}
+        fila: filaNumerada
+    });
+};
 
 /**
  * Função responsável por retornar a lista filtrada a partir de um parâmetro;
  */
 const filterLine = (ctx) => {
-    const parametro = ctx.request.body.parametro
-    const valorDoParametro = ctx.request.body.valor
+    const parametro = ctx.request.body.parametro;
+    const valorDoParametro = ctx.request.body.valor;
     
-    const filaFiltrada = filtrarFila(parametro, valorDoParametro)
+    const filaFiltrada = filtrarFila(parametro, valorDoParametro);
     // se nao houver ninguem que se encaixe no filtro
     if (filaFiltrada.length === 0) {
         response(ctx, 200,  {
-            fila: 'Não há ninguém que se encaixe no filtro.'
-        })
+            mensagem: 'Não há ninguém que se encaixe no filtro.'
+        });
         return;
     };
 
@@ -266,8 +266,8 @@ const filterLine = (ctx) => {
     response(ctx, 200, {
         quantidade: filaFiltrada.length,
         pessoas: filaFiltrada
-    })
-}
+    });
+};
 
 /**
  * Função responsável por excluir o primeiro elemento da fila e retorná-lo;
@@ -278,14 +278,14 @@ const popLine = (ctx) => {
     if (proximoDaFila === undefined) {
         response(ctx, 200, {
             proximoDaFila: 'A fila está vazia.'
-        })
+        });
         return;
     };
 
     response(ctx, 200, {
         proximoDaFila: proximoDaFila
-    })
-}
+    });
+};
 
 /**
  * Função responsável por criar um novo cadastro;
@@ -293,23 +293,23 @@ const popLine = (ctx) => {
 const createUser = (ctx) => {
     const corpoDaRequisicao = ctx.request.body;
 
-    const novoCadastro = criarCadastro(corpoDaRequisicao)
+    const novoCadastro = criarCadastro(corpoDaRequisicao);
     // se a funcão retornar undefined, houve problema com os dados fornecidos
     if (novoCadastro === undefined) {
         response(ctx, 400, {
             mensagem: 'Alguma informação do usuário a ser cadastrado não foi fornecida.'
-        })
+        });
         return;
     };
     // se a funcao retornar false, é porque o email fornecido ja está cadastrado
     if (!novoCadastro) {
         response(ctx, 403, {
             mensagem: 'O e-mail fornecido já está sendo utilizado.'
-        })
+        });
         return;
     };
 
-    response(ctx, 201, {cadastro: novoCadastro })
+    response(ctx, 201, { cadastro: novoCadastro });
 }
 
 /**
@@ -321,7 +321,7 @@ const addToLine = (ctx) => {
     if (isNaN(idDoUsuario)) { 
         response(ctx, 400, {
             mensgem: 'A ID inserida é inválida'
-        })
+        });
         return;
     };
 
@@ -330,7 +330,7 @@ const addToLine = (ctx) => {
     if (!cadastro) {
         response(ctx, 400, {
             mensagem: 'Não foi encontrado cadastro para a ID fornecida.'
-        })
+        });
         return;
     };
 
@@ -340,14 +340,14 @@ const addToLine = (ctx) => {
         response(ctx, 403, {
             mensagem: 'O usuário já está na fila.',
             posição: usuarioNaFila
-        })
+        });
         return;
     };
 
     const posicao = adicionarAoFimDaFila(cadastro);
     response(ctx, 200, {
         posição: posicao
-    })
+    });
 }
 
 
@@ -360,4 +360,4 @@ module.exports = {
     popLine,
     createUser,
     addToLine
-}
+};
