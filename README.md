@@ -52,4 +52,16 @@ O desafio consiste em criar uma API RPC para facilitar o gerenciamento de uma fi
 </ul>
 
 ## Instalação
-<p>Para instalar, basta digitar `npm start` no seu terminal.</p>
+<p>Para instalar, basta digitar ```npm start``` no seu terminal.</p>
+
+## Fluxo da aplicação
+
+<p>Siga o seguinte fluxo para experimentar todas as funcionalidades da aplicação:</p>
+<ol>
+ <li>/createUser</li>
+ <li>/addToLine</li>
+ <li>/findPosition</li>
+ <li>/showLine</li>
+ <li>/filterLine</li>
+ <li>/popLine</li>
+<ol>
